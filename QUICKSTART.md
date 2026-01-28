@@ -143,16 +143,6 @@ data:
 
 **See [COMMAND_REFERENCE.md](COMMAND_REFERENCE.md) for the complete list of 70+ commands.**
 
-## Unfolded Circle Setup
-
-See `UNFOLDED_CIRCLE.md` for detailed instructions on integrating with your Unfolded Circle Remote 3.
-
-**Quick version:**
-1. Ensure integration is working in Home Assistant
-2. Open Unfolded Circle app
-3. Your RetroTINK remotes should appear automatically
-4. Add them to an activity and map buttons
-
 ## Troubleshooting
 
 **Integration doesn't appear:**
@@ -169,17 +159,11 @@ See `UNFOLDED_CIRCLE.md` for detailed instructions on integrating with your Unfo
 - Check entity state in Developer Tools
 - Enable debug logging (see README.md)
 
-**On Unfolded Circle:**
-- Verify entities show as "available" in Home Assistant
-- Restart Unfolded Circle integration
-- Test commands in HA first before using remote
-
 ## Next Steps
 
 1. **Read the full documentation**: See `README.md`
 2. **Check out examples**: See `EXAMPLES.md` for automations and Lovelace cards
-3. **Set up Unfolded Circle**: See `UNFOLDED_CIRCLE.md`
-4. **Create automations**: Automate profile switching, power management, etc.
+3. **Create automations**: Automate profile switching, power management, etc.
 
 ## Getting Help
 
@@ -195,4 +179,4 @@ RetroTINK is a trademark of RetroTINK LLC.
 
 ---
 
-**You're ready to go! Enjoy seamless control of your RetroTINK devices through Home Assistant and Unfolded Circle Remote 3.**
+**You're ready to go! Enjoy seamless control of your RetroTINK devices through Home Assistant.**
