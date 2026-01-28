@@ -1,0 +1,54 @@
+# This file is not required for the integration to work,
+# but provides documentation for the services in the Developer Tools
+
+send_command:
+  name: Send Command
+  description: Send a command or sequence of commands to the RetroTINK device
+  target:
+    entity:
+      integration: retrotink
+      domain: remote
+  fields:
+    command:
+      name: Command
+      description: Command(s) to send to the device
+      required: true
+      example: "menu"
+      selector:
+        object:
+    num_repeats:
+      name: Number of Repeats
+      description: Number of times to repeat the command sequence
+      default: 1
+      example: 3
+      selector:
+        number:
+          min: 1
+          max: 100
+    delay_secs:
+      name: Delay (seconds)
+      description: Delay between commands in seconds
+      default: 0.4
+      example: 0.5
+      selector:
+        number:
+          min: 0
+          max: 10
+          step: 0.1
+          unit_of_measurement: s
+
+turn_on:
+  name: Turn On
+  description: Turn on the RetroTINK device (sends power command)
+  target:
+    entity:
+      integration: retrotink
+      domain: remote
+
+turn_off:
+  name: Turn Off
+  description: Turn off the RetroTINK device (sends power command)
+  target:
+    entity:
+      integration: retrotink
+      domain: remote
