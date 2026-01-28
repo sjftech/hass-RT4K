@@ -13,11 +13,9 @@ A custom Home Assistant integration for controlling RetroTINK-4K devices (Pro an
 - Standard remote command mapping (up, down, left, right, enter, menu, etc.)
 - Direct RetroTINK command support
 
-**Note:** To display the RetroTINK logo in Home Assistant, the icon files need to be submitted to the [Home Assistant Brands repository](https://github.com/home-assistant/brands). See [ADDING_LOGO.md](ADDING_LOGO.md) for instructions. The integration works perfectly without the logo.
-
 ## Installation
 
-### HACS (Recommended - when published)
+### HACS
 
 1. Open HACS in Home Assistant
 2. Go to Integrations
