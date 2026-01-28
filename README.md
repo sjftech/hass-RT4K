@@ -1,4 +1,4 @@
-# RetroTINK Serial Remote Integration for Home Assistant
+# RetroTINK-4K Serial Remote Integration for Home Assistant
 
 A custom Home Assistant integration for controlling RetroTINK-4K devices (Pro and CE models) via serial over USB.
 
@@ -6,12 +6,11 @@ A custom Home Assistant integration for controlling RetroTINK-4K devices (Pro an
 
 - Full remote control of RetroTINK-4K Pro and CE devices
 - Exposes devices as Home Assistant remote entities
-- Compatible with Unfolded Circle Remote 3
 - Multiple device support - add both Pro and CE (or multiple units)
 - Device model selection (Pro or CE) with proper device identification
 - UI-based configuration flow
 - Standard remote command mapping (up, down, left, right, enter, menu, etc.)
-- Direct RetroTINK command support
+- Direct RetroTINK-4K command support
 
 ## Installation
 
@@ -155,14 +154,6 @@ For detailed command documentation, visit the official wiki:
 `pwr on` (turn on), `pwr` (turn off)
 
 You can send raw RetroTINK commands directly - they'll automatically be prefixed with "remote".
-
-### Unfolded Circle Remote 3 Integration
-
-1. Ensure the Unfolded Circle integration is set up in Home Assistant
-2. Your RetroTINK remote entities will automatically appear in the Unfolded Circle app
-3. Add them to your remote's activity configuration
-4. Map buttons to commands using "Send Command" in the Unfolded Circle app
-5. Use command names from the [COMMAND_REFERENCE.md](COMMAND_REFERENCE.md)
 
 ### Automations
 
