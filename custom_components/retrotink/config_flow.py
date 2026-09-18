@@ -30,7 +30,7 @@ async def validate_input(hass: HomeAssistant, data: dict[str, Any]) -> dict[str,
     def test_serial():
         try:
             # Configure serial port with proper settings
-            ser = serial.Serial(
+            ser = serial.serial_for_url(
                 data[CONF_SERIAL_PORT],
                 115200,
                 bytesize=serial.EIGHTBITS,
@@ -40,7 +40,7 @@ async def validate_input(hass: HomeAssistant, data: dict[str, Any]) -> dict[str,
             )
             ser.close()
             return True
-        except serial.SerialException:
+        except (serial.SerialException, ValueError):
             return False
 
     # Test serial connection in executor since it's blocking

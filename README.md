@@ -52,6 +52,19 @@ You should see devices like `/dev/ttyUSB0` and `/dev/ttyUSB1`.
    - Enter the serial port (e.g., `/dev/ttyUSB0`)
 5. Repeat for your second device if you have both Pro and CE
 
+### Network-attached RT4Ks
+
+The serial port field accepts any pySerial URL, not just a local device path.
+If your RT4K's serial port is exposed over the network (a WiFi serial bridge,
+`ser2net`, an ESP32/Pico adapter, …), enter it as a URL instead:
+
+- `socket://192.168.1.50:2323` — raw TCP passthrough (most WiFi serial bridges)
+- `rfc2217://192.168.1.50:4000` — a true RFC2217 server such as `ser2net`
+
+Use `socket://` unless the far end explicitly implements RFC2217; a raw TCP
+bridge will fail RFC2217's Telnet option negotiation with
+"Remote does not seem to support RFC2217 or BINARY mode".
+
 ### Permissions
 
 Ensure Home Assistant has permission to access the serial ports:

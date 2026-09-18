@@ -88,7 +88,7 @@ class RetroTINKRemote(RemoteEntity):
         """
         try:
             # Open serial connection with proper settings
-            ser = serial.Serial(
+            ser = serial.serial_for_url(
                 self._serial_port,
                 115200,
                 bytesize=serial.EIGHTBITS,
