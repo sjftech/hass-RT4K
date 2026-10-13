@@ -2,8 +2,24 @@
   "config": {
     "step": {
       "user": {
-        "title": "Add RetroTINK Device",
-        "description": "Add a RetroTINK-4K device. You can add multiple devices by running this setup again.",
+        "title": "Add RetroTINK-4K",
+        "description": "How is this RetroTINK-4K connected?",
+        "menu_options": {
+          "donutshop": "DonutShop dongle (Wi-Fi)",
+          "serial": "USB serial cable to this Home Assistant machine"
+        }
+      },
+      "donutshop": {
+        "title": "RetroTINK-4K via DonutShop",
+        "description": "Enter the address of the DonutShop dongle plugged into your RetroTINK-4K (hostname or IP). Firmware v0.7.25+ gives real power state; older versions work with assumed state.",
+        "data": {
+          "device_model": "Device Model",
+          "host": "DonutShop address (e.g. donutshop.local or 192.168.1.50)"
+        }
+      },
+      "serial": {
+        "title": "RetroTINK-4K via USB",
+        "description": "Add a RetroTINK-4K plugged by USB into this machine.",
         "data": {
           "device_model": "Device Model",
           "serial_port": "Serial Port (e.g., /dev/ttyUSB0)"
@@ -12,10 +28,11 @@
     },
     "error": {
       "cannot_connect": "Failed to connect to the serial port. Check the port path and permissions.",
+      "cannot_connect_donutshop": "No DonutShop answered at this address. Check that it is on Wi-Fi (blue LED) and try its IP address instead of the .local name.",
       "unknown": "Unexpected error occurred"
     },
     "abort": {
-      "already_configured": "This serial port is already configured"
+      "already_configured": "This RetroTINK is already configured"
     }
   }
 }

@@ -4,6 +4,13 @@ DOMAIN = "retrotink"
 
 CONF_SERIAL_PORT = "serial_port"
 CONF_DEVICE_MODEL = "device_model"
+CONF_CONNECTION_TYPE = "connection_type"
+CONF_HOST = "host"
+
+CONNECTION_SERIAL = "serial"
+CONNECTION_DONUTSHOP = "donutshop"
+
+DEFAULT_DONUTSHOP_HOST = "donutshop.local"
 
 DEVICE_MODELS = {
     "RetroTINK-4K Pro": "RetroTINK-4K Pro",

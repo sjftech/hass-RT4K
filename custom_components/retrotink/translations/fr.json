@@ -1,0 +1,38 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Ajouter un RetroTINK-4K",
+        "description": "Comment ce RetroTINK-4K est-il connecté ?",
+        "menu_options": {
+          "donutshop": "Dongle DonutShop (Wi-Fi)",
+          "serial": "Câble USB vers cette machine Home Assistant"
+        }
+      },
+      "donutshop": {
+        "title": "RetroTINK-4K via DonutShop",
+        "description": "Adresse du dongle DonutShop branché sur ton RetroTINK-4K (nom ou IP). Le firmware v0.7.25+ donne l'état réel allumé/veille ; les versions plus anciennes marchent avec un état supposé.",
+        "data": {
+          "device_model": "Modèle",
+          "host": "Adresse du DonutShop (ex. donutshop.local ou 192.168.1.50)"
+        }
+      },
+      "serial": {
+        "title": "RetroTINK-4K en USB",
+        "description": "Ajouter un RetroTINK-4K branché en USB sur cette machine.",
+        "data": {
+          "device_model": "Modèle",
+          "serial_port": "Port série (ex. /dev/ttyUSB0)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossible d'ouvrir le port série. Vérifie le chemin et les permissions.",
+      "cannot_connect_donutshop": "Aucun DonutShop ne répond à cette adresse. Vérifie qu'il est connecté au Wi-Fi (LED bleue) et essaie son adresse IP plutôt que le nom .local.",
+      "unknown": "Erreur inattendue"
+    },
+    "abort": {
+      "already_configured": "Ce RetroTINK est déjà configuré"
+    }
+  }
+}

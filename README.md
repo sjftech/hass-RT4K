@@ -1,6 +1,37 @@
-# RetroTINK-4K Serial Remote Integration for Home Assistant
+# RetroTINK-4K Remote Integration for Home Assistant
 
-A custom Home Assistant integration for controlling RetroTINK-4K devices (Pro and CE models) via serial over USB.
+A custom Home Assistant integration for controlling RetroTINK-4K devices (Pro and CE models), either:
+
+- **over Wi-Fi through a [DonutShop](https://github.com/svirant/DonutShop) dongle** (Arduino Nano ESP32 plugged into the RT4K), or
+- **over a USB serial cable** plugged into the Home Assistant machine.
+
+## DonutShop (Wi-Fi) mode
+
+No cable between Home Assistant and the RetroTINK: Home Assistant can live anywhere on your network.
+
+```
+[Home Assistant] --Wi-Fi--> [DonutShop ESP32] --USB--> [RetroTINK-4K]
+```
+
+- DonutShop keeps all its own features (gameID profile switching, WebCtl, file manager...).
+- Commands are sent to `POST /api/command` (DonutShop v0.7.25+), with automatic fallback to the older `POST /cmd` endpoint.
+- With v0.7.25+, the entity polls `GET /api/status` every 15 s, so the on/off state reflects the **real** RetroTINK power state (including sleep from the IR remote or the auto-sleep timer). Profile, input and output are exposed as attributes.
+- `/api/status` answers "busy" while the DonutShop WebCtl page is open in a browser; the entity simply keeps its last state until the page is closed.
+- Turning the entity on sends `pwr on`, which wakes the RetroTINK from sleep. The DonutShop must stay powered while the RT4K sleeps (it does with the recommended OTG adapter setup, but check that its LED stays blue).
+
+Setup: **Settings → Devices & Services → Add Integration → RetroTINK-4K → DonutShop dongle (Wi-Fi)**, then enter `donutshop.local` or, better, the dongle's IP address.
+
+Any command containing a space is sent verbatim, so you can also use raw RT4K serial commands:
+
+```yaml
+service: remote.send_command
+target:
+  entity_id: remote.retrotink_4k_pro_donutshop
+data:
+  command: "SVS NEW INPUT=1"
+```
+
+## USB serial mode
 
 ## Features
 
